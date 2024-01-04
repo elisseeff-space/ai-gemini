@@ -1,21 +1,22 @@
-from google.cloud import aiplatform
-import vertexai.preview
-from vertexai.preview.generative_models import GenerativeModel, Part
+import vertexai
+from vertexai.language_models import TextGenerationModel
 
-def generate():
-  model = GenerativeModel("gemini-pro")
-  responses = model.generate_content(
-    """hi, what is newton theory""",
-    generation_config={
-        "max_output_tokens": 2048,
-        "temperature": 0.9,
-        "top_p": 1
-    },
-  stream=True,
-  )
-  
-  for response in responses:
-      print(response.candidates[0].content.parts[0].text)
+def streaming_prediction(
+  project_id: str,
+  location: str,
+) -> str:
+  """Streaming Text Example with a Large Language Model"""
 
+vertexai.init(project=project_id, location=location)
 
-generate()
+text_generation_model = TextGenerationModel.from_pretrained("text-bison")
+parameters = {
+  "temperature": temperature,  # Temperature controls the degree of randomness in token selection.
+  "max_output_tokens": 256,  # Token limit determines the maximum amount of text output.
+  "top_p": 0.8,  # Tokens are selected from most probable to least until the sum of their probabilities equals the top_p value.
+  "top_k": 40,  # A top_k of 1 means the selected token is the most probable among all tokens.
+}
+
+responses = text_generation_model.predict_streaming(prompt="Give me ten interview questions for the role of program manager.", **parameters)
+for response in responses:
+  print(response)
