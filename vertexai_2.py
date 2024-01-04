@@ -1,4 +1,5 @@
-import vertexai
+from google.cloud import aiplatform
+import vertexai.preview
 from vertexai.preview.generative_models import GenerativeModel, Part
 
 def generate():
