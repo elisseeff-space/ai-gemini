@@ -6,7 +6,8 @@ from vertexai.preview.generative_models import GenerativeModel, ChatSession
 from vertexai.language_models import ChatModel, InputOutputTextPair
 
 # TODO(developer): Update and un-comment below lines
-project_id = "PROJECT_ID"
+#project_id = "PROJECT_ID"
+project_id = "ai-elis-project"
 location = "us-central1"
 vertexai.init(project='ai-elis-project', location=location)
 
