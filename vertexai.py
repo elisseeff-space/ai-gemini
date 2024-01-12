@@ -23,10 +23,10 @@ def init_sample(
 
 #from google.cloud import aiplatform
 from google.cloud import aiplatform, aiplatform_v1beta1
-#import vertexai
-#import vertexai.preview
-#from vertexai.preview.generative_models import GenerativeModel, ChatSession
-#from vertexai.language_models import ChatModel, InputOutputTextPair
+import vertexai
+import vertexai.preview
+from vertexai.preview.generative_models import GenerativeModel, ChatSession
+from vertexai.language_models import ChatModel, InputOutputTextPair
 
 # TODO(developer): Update and un-comment below lines
 #project_id = "PROJECT_ID"
