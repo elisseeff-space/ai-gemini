@@ -3,7 +3,7 @@ gcloud auth print-access-token
 gcloud auth list
 
 pip install --upgrade google-cloud-aiplatform
+pip install -q -U google-generativeai
+
 pip install vertexai
 pip install gcloud api
-
-ya29.a0AfB_byAXeE9lCLCnhEytPvOy5Aa-piaplxqgkFsP_Q1-_S8C905-WhYjx3T3603n-RnFPwwUG3MgLC2ikj1d0wRkkA9w3bpc3M0RDTMrmNl2HLIZtYIrTtFzROZgiFl-C9Oo5Dkf3aotBhDMVgTKsWR0P8nESTO_1v6aN6W6qgaCgYKARsSARASFQHGX2MiiWzeLxU4k6H7PuKyjKWA3A0177
